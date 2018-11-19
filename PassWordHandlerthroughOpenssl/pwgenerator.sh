@@ -10,6 +10,16 @@ Check_ID() {
 }
 
 
+dpkg -l openssl &> /dev/null
+
+if [ $? -eq 0 ]; then
+	echo "openssl exists :)"
+        else
+       echo "apt install openssl";
+fi
+
+
+
 #updated 30 May 2016
 echo "Please enter the domain name for mail"
 read cdomain
