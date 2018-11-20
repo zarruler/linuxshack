@@ -20,7 +20,7 @@ echo ""
 read GIVENCOMMAND
 
 #for HOST in fqdn1 fqdn2 fqdn3 fqdn4 etc.....
-for HOST in {Please add hosts here like the example above}
+for HOST in {Please add hosts here like the example above without commmas}
 
 do
 
