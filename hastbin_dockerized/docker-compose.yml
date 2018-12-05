@@ -1,0 +1,13 @@
+#!/bin/bash
+
+#Creator: Floyd Modau
+#Description: how to deploy and run hastebin via docker
+#
+
+docker run --name redis -d redis
+
+sleep 30s
+
+docker run --name hastebin -d -p 7777:7777 --link redis:redis -e STORAGE_TYPE=redis rlister/hastebin
+
+

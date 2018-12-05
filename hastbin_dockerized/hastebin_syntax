@@ -1,0 +1,21 @@
+Instructions on how to use hastebin
+
+1) Edit your .bashrc file and add this line to the very end:
+  haste() { a=$(cat); curl -X POST -s -d "$a" http://{fqdn}:7777/documents | awk -F '"' '{print "http://{fqdn}:7777/"$4}'; }
+
+2) Source your .bashrc
+  $ source .bashrc
+    OR
+  $ . .bashrc
+
+3) `cat` a file and pipe the output to the `haste` utility and look for a return URL
+  $ cat .bashrc | haste
+  http://{fqdn}:7777/uzolozijen
+
+4) Paste the URL into your browser to see what you just pasted.
+
+NOTES:
+You can use the xsel command to copy the output directly to your clipboard like so:
+$ cat .bashrc | haste | sxel
+
+Enjoy!
